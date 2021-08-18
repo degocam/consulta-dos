@@ -1,0 +1,81 @@
+body{
+    background-image: url("../resources/fondo-desktop.jpg");
+    color: white;
+}
+
+#grilla{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-between;
+    padding: 1vh 5vw 0vh 5vw;
+}
+
+#main-navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    padding: 5vh 0vw 5vh 0vw;
+}
+
+#main-navbar img{
+    height: 15vh;
+}
+
+a{
+    display: inline-block;
+    justify-content: space-between;
+    text-decoration: none;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    color: white;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 1em;
+    font-weight: 800;
+}
+
+body img{
+    height: 40vh;
+    width: auto;
+    border-radius: 10px;
+}
+
+h2{
+    font-size: 20px;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 800;
+    line-height: 19px;
+    padding-bottom: 1vh;
+}
+
+h3{
+    font-size: 19px;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 700;
+}
+
+p{
+    font-size: 17px;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 500;
+}
+
+#buyTicket{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30vw;
+    font-family: 'Catamaran', sans-serif;
+}
+
+#comprar{
+    background-color: blue;
+    width: 25vw;
+    font-family: 'Catamaran', sans-serif;
+}
+
+#comprarEntradas{
+    background-image: url(resources/conjuro.svg);
+}
