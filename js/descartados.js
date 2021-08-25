@@ -101,3 +101,15 @@ function valorTotal(a,b){
     let totalEntradas = a*b;
     return(totalEntradas);
 }
+
+//Jquery para capturar la cantidad de entradas
+$(".numEntradas").change(function (e) {
+    let cantComprar= e.target.value;
+});
+
+console.log(cantComprar);
+
+//trigger del div escondido con la sección donde se eligen las entradas
+$("#qEntradas").show(()=>{
+    $(".btn-horarios").trigger("click");
+});

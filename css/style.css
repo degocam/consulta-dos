@@ -9,7 +9,14 @@ body{
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: space-between;
-    padding: 1vh 5vw 0vh 5vw;
+    padding: 0vh 5vw 0vh 5vw;
+}
+
+#cardPeli{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 10vh 4vw 3vh 0vw;
 }
 
 #main-navbar{
@@ -37,7 +44,7 @@ a{
 }
 
 body img{
-    height: 40vh;
+    height: 50vh;
     width: auto;
     border-radius: 10px;
 }
@@ -62,20 +69,56 @@ p{
     font-weight: 500;
 }
 
+.btn-horarios{
+    background-color: #99002E;
+    border-radius: 0px;
+    border: none;
+    height: 2rem;
+    color: white;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: black;
+}
+
+button:active{
+    border-radius: 0px;
+    border: none;
+    height: 2rem;
+    color: white;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 900;
+    font-size: 1em;
+}
+
+/*Estilos página Comprar Entradas*/
+
+#comprarEntradas{
+    display: flex;
+    margin: 7vh 5vw 3vh 8vw;
+}
+
+.infoPeli{
+    width: 30vw;
+}
+
+.cardEntradas{
+    width: 60vw;
+    padding-left: 9vw;
+}
+
 #buyTicket{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 30vw;
     font-family: 'Catamaran', sans-serif;
 }
 
-#comprar{
-    background-color: blue;
-    width: 25vw;
-    font-family: 'Catamaran', sans-serif;
-}
-
-#comprarEntradas{
-    background-image: url(resources/conjuro.svg);
+#qEntradas{
+    display: flex;
+    flex-direction: row;
 }

@@ -17,8 +17,9 @@ const grillaPelis = [
     {nombre: "Top Gun: Maverick", horario: "15:55, 16:35, 18:50", img: "resources/top-gun.svg", price: 2990},
     {nombre: "Matrix IV", horario: "18:00, 20:20, 22:00", img: "resources/matrix.svg"},
     {nombre: "Spiderman: Sin Camino<br> A Casa", horario: "17:00, 19:20, 21:00", img: "resources/spiderman.svg", price: 2990},
-    {nombre: "Sing 2", horario: "14:15, 16:30, 18:00", img: "resources/sing-2.svg", price: 2990}
-    // {nombre: "Amor Sin Barreras", horario: "17:20, 19:45, 21:50", img: "resources/wss.svg"}
+    {nombre: "Sing 2", horario: "14:15, 16:30, 18:00", img: "resources/sing-2.svg", price: 2990},
+    {nombre: "Amor Sin Barreras", horario: "17:20, 19:45, 21:50", img: "resources/wss.svg", price: 2990},
+    {nombre: "The Batman", horario: "18:10, 20:35, 22:20", img: "resources/batman.svg", price: 2990}
 ];
 
 //Se instancia cada película a partir de la grilla
@@ -26,10 +27,10 @@ for (const pelicula of grillaPelis){
 
 //A través de del js minificado se crea una card para cada película en el div de nombre "grilla"
     $("#grilla").append(    
-        `<di><h2>${pelicula.nombre}</h2>
-        <a href="buy-page.html"><img src="${pelicula.img}" alt="${pelicula.nombre}"></a>
-        <h3>Comprar</h3>
-        <button class="btn-horarios">Ver Horarios</button</div>`);
+        `<div id="cardPeli">
+        <img src="${pelicula.img}" alt="${pelicula.nombre}">
+        <h2>${pelicula.nombre}</h2>
+        <button class="btn-horarios">Ver Horarios</button></div>`);
 }
 
 //El botón "Comprar" va a direccionar al hacer click a la página donde se compra
@@ -37,3 +38,5 @@ $(".btn-horarios").click((e) => {
     window.location = "buy-page.html";
 }
 );
+
+JSON.stringify(grillaPelis);
