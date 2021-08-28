@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    $("body").slideDown(4000);
+});
+
 //Esta es la sección que brinda información de la película
 
 $(".infoPeli").append(
@@ -10,14 +14,6 @@ $(".infoPeli").append(
     <h3>Duración: 115 minutos</h3>
     <h3>Director: Fulano Mengano</h3>`);
 
-//Esta es la sección dónde se elige el horario y se compra la entrada
-
-$(".btn-horarios").click((e)=>{
-    $(".cardEntradas").append(
-        `<p>Total: </p>
-        </div>`
-    );
-});
 
 $(".btn-horarios").click((e)=>{
     $("#qEntradas").show();
@@ -27,13 +23,32 @@ let horaElegida = $(".btn-horarios").click((e) =>{
     console.log(e.target.value)
 });
 
-let cantEntradas = $(".numEntradas").change(function(e){
-    console.log(this.value)
+// Esta es la función que calcula el total de las entradas
+let numeroEntradas = document.getElementById("numEntradas");
+
+let cantEntradas = $("#comprar").click(function(e){
+    e.preventDefault();
+    let cantidadEntradas = parseInt(numeroEntradas.value);
+    localStorage.setItem('cantEntradas', cantidadEntradas);
+
+    console.log(cantidadEntradas);
+    
+    console.log(precioEntradas(cantidadEntradas, 2990));
 });
 
 function precioEntradas (a,b){
-    let totalEntradas = a*b;
-    console.log(totalEntradas);  
-}
+    let totalEntradas = a * b;
+    localStorage.setItem('totalCompra', totalEntradas);
+    console.log(totalEntradas);
+};
 
-precioEntradas(cantEntradas, 2990);
+//Este es un array que recibe el total y lo envía en forma de párrafo al DOM
+let totalCompra = localStorage.getItem('totalCompra');
+
+$("#comprar").click((e)=>{
+    e.preventDefault();
+    $(".cardEntradas").append(
+        `<p>Total:${totalCompra}</p>
+        </div>`
+    );
+});

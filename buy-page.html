@@ -5,18 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Es muy fácil comprar tus entradas</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <nav id="main-navbar">
             <a href="#">Próximos Estrenos</a>
             <a href="#">Confitería</a>
-            <a href="index.html"><img src="/resources/logo-cine.svg" alt="Home Cinema y claqueta de cine"></a>
+            <a href="index.html"><img src="resources/logo-cine.svg" alt="Home Cinema y claqueta de cine"></a>
             <a href="#">Promociones</a>
             <a href="#">Tarjeta Cine Movies</a>
         </nav>
@@ -32,7 +31,8 @@
                 <div><h3>Entrada General</h3>
                 <p> valor: CLP2.990 (Incluye cargo por servicio)</p>
                 </div>
-                <select class="numEntradas">
+                <!-- ACÁ LO QUE HICE FUE CAMBIAR POR UN ID, YA QUE NO HACE FALTA UNA CLASS -->
+                <select id="numEntradas">
                             <option value="0" selected>0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -42,7 +42,12 @@
                             <option value="6">6</option>
                             <option value="7">7</option>
                             <option value="8">8</option></select>
+                        <!-- ACÁ LO QUE HICE FUE CREAR UN BOTÓN SIMPLE PARA REALIZAR LA COMPRA CON EVENTO CLICK -->
+                        <div>
+                            <button id="comprar">Comprar</button>
+                        </div>
             </div>
+
             <!-- <form id="buyTicket">
                 <label for="name">Indícanos tu nombre</label><input type="text" id="name">
                 <label for="email">Escribe tu correo al que llegará tu entrada</label><input type="email" id="email">
