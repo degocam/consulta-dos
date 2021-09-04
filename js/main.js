@@ -2,7 +2,7 @@
 
 //Ya que estamos trabajando con tantas imágenes agregamos ready() para ayudar a la carga
 $(document).ready(function()
-{    $("body").fadeIn(5000);}
+{console.log('Dom listo para usarse')}
 );
 
 //Esta sección despliega el menú
