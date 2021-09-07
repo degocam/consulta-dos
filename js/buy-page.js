@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("body").slideDown(4000);
+    console.log('Listo para cargar');
 });
 
 //Esta es la sección que brinda información de la película
@@ -16,17 +16,41 @@ $(".infoPeli").append(
 
 
 $(".btn-horarios").click((e)=>{
+    e.preventDefault();
     $("#qEntradas").slideDown();
     $("#divCard").slideDown();
+
+    // let horaElegida = e.target.value;
+
+    // return horaElegida;
 });
 
-let horaElegida = $(".btn-horarios").click(function(e){
-    let eleccion = toString(horaElegida.value);
-    return eleccion;
+// let horaPelis = document.getElementById("horariosPelis");
+
+// $(".btn-horarios").click(function(e){
+//   e.preventDefault();
+
+// });
+
+$("#nombreComp").change(function(e){
+  e.preventDefault();
+  let nombreComp = e.target.value;
+
+  return nombreComp;
 });
 
-let nombreComprador = $("#name").change((e) =>{
-    console.log(e.target.value)
+$("#correoComp").change(function(e){
+  e.preventDefault();
+  let correoComp = e.target.value;
+
+  return correoComp;
+});
+
+$("#telNumber").change(function(e){
+  e.preventDefault();
+  let telNumber = e.target.value;
+
+  return telNumber;
 });
 
 // Esta es la función que calcula el total de las entradas
@@ -35,22 +59,23 @@ let numeroEntradas = document.getElementById("numEntradas");
 let cantEntradas = $("#comprar").click(function(e){
     e.preventDefault();
     let cantidadEntradas = parseInt(numeroEntradas.value);
-    localStorage.setItem('cantEntradas', cantidadEntradas);
-
-    console.log(cantidadEntradas);
-    
+    // let horaFuncion = String(horaElegida.value);
+    let emailComprador = String(correoComp.value);
+    let nombreComprador = String(nombreComp.value);
+    let telefonoComprador = String(telNumber.value);
     const total = precioEntradas(cantidadEntradas, 2990);
 
     $(".modalContenido").append(
-        `<p>Horario:${horaElegida}</p>
-        <p>${numeroEntradas.value} entradas</p>
-        <p>Total:${total}</p>`
+        `<h2>${nombreComprador}</h2>
+        <p>Haz comprado ${cantidadEntradas} entradas para la función de las </p>
+        <p>Tu código para retirar en boletería llegará al correo ${emailComprador}</p>
+        <p>y al teléfono ${telefonoComprador}</p>
+        <h3>Total:${total}</h3>`
     )
 });
 
 function precioEntradas (a,b){
     let totalEntradas = a * b;
-    localStorage.setItem('totalCompra', totalEntradas);
     console.log(totalEntradas);
     return totalEntradas;
 };

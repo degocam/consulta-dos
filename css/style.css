@@ -100,12 +100,12 @@ button:hover{
 }
 
 button:active{
-    border-radius: 0px;
+    border-radius: 10px;
     border: 10px;
     height: 2rem;
     color: white;
     font-family: 'Catamaran', sans-serif;
-    font-weight: 900;
+    font-weight: inherit;
     font-size: 1em;
 }
 
@@ -202,6 +202,7 @@ button:active{
     border: 1px solid #888;
     width: 80%;
     color: black;
+    border-radius: 12px;
   }
   
   .close {
